@@ -49,7 +49,7 @@ const Wrap = styled.div`
     z-index: -10;
     width: 100vw;
     height: 100vh;
-    background: url('/images/model-s.jpg');
+    background: url('./images/model-s.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -57,7 +57,7 @@ const Wrap = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-image: ${props => `url("/images/${props.bgImage}")`};
+    background-image: ${props => `url("./images/${props.bgImage}")`};
     scroll-snap-align: center;
 `
 
