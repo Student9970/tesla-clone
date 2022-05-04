@@ -4,6 +4,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-snap-type: y mandatory;
 }
 
 body {
@@ -26,4 +31,8 @@ body {
     60% {
         transform: translateY(3spx);
     }
+}
+
+a {
+    text-decoration: none;
 }

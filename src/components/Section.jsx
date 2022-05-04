@@ -1,33 +1,39 @@
 import React from 'react';
 import styled from 'styled-components';
+import Fade from 'react-reveal/Fade'
 
 function Section(props) {
     return (
         <Wrap bgImage={props.backgroundImg}>
 
-            <ItemText>
-                <h1>{props.title}</h1>
-                <p>{props.description}</p>
-            </ItemText>
+            <Fade bottom>
+                <ItemText>
+                    <h1>{props.title}</h1>
+                    <p>{props.description}</p>
+                </ItemText>
+            </Fade>
 
             <Buttons>
-                <ButtonGroup>
 
-                    <LeftButton>
-                        {props.leftBtnText}
-                    </LeftButton>
+                <Fade bottom>
+                    <ButtonGroup>
 
-                    {
-                        props.rightBtnText &&
+                        <LeftButton>
+                            {props.leftBtnText}
+                        </LeftButton>
 
-                        // If there is rightBtnText present then only show the right button
+                        {
+                            props.rightBtnText &&
 
-                        <RightButton>
-                            {props.rightBtnText}
-                        </RightButton>
-                    }
+                            // If there is rightBtnText present then only show the right button
 
-                </ButtonGroup>
+                            <RightButton>
+                                {props.rightBtnText}
+                            </RightButton>
+                        }
+
+                    </ButtonGroup>
+                </Fade>
 
                 <DownArrow src="/images/down-arrow.svg" alt="down arrow" />
             </Buttons>
@@ -39,6 +45,8 @@ function Section(props) {
 export default Section
 
 const Wrap = styled.div`
+    position: inherit;
+    z-index: -10;
     width: 100vw;
     height: 100vh;
     background: url('/images/model-s.jpg');
@@ -50,6 +58,7 @@ const Wrap = styled.div`
     justify-content: space-between;
     align-items: center;
     background-image: ${props => `url("/images/${props.bgImage}")`};
+    scroll-snap-align: center;
 `
 
 const ItemText = styled.div`
